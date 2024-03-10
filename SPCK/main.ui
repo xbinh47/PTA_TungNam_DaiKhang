@@ -49,27 +49,91 @@ background-color:rgb(232, 232, 232);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QToolButton" name="homeButton">
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>780</x>
-       <y>10</y>
-       <width>41</width>
-       <height>41</height>
+       <x>770</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Home</string>
+      <string/>
      </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../../../A.Icons/house-solid.svg</normaloff>../../../A.Icons/house-solid.svg</iconset>
+     <property name="pixmap">
+      <pixmap>../../../A.Icons/house-solid.svg</pixmap>
      </property>
-     <property name="iconSize">
-      <size>
-       <width>25</width>
-       <height>25</height>
-      </size>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../A.Icons/bell-regular.svg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bellButton">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(0,0,0)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="houseButton">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>20</y>
+       <width>31</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(0,0,0)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>20</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 11pt &quot;Segoe UI&quot;;
+color:rgb(0, 0, 0)</string>
+     </property>
+     <property name="text">
+      <string>Help?</string>
      </property>
     </widget>
    </widget>
@@ -86,13 +150,13 @@ background-color:rgb(232, 232, 232);</string>
      <string notr="true">border-radius:10px;
 background-color:rgb(70, 70, 70)</string>
     </property>
-    <widget class="QLabel" name="settings">
+    <widget class="QLabel" name="settingIcon">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>590</y>
-       <width>31</width>
-       <height>31</height>
+       <x>0</x>
+       <y>570</y>
+       <width>51</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -105,11 +169,30 @@ background-color:rgb(70, 70, 70)</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="optionsbar">
+    <widget class="QPushButton" name="settingButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>570</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="barIcon">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>540</y>
+       <y>520</y>
        <width>31</width>
        <height>31</height>
       </rect>
@@ -122,6 +205,27 @@ background-color:rgb(70, 70, 70)</string>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>520</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -174,6 +278,9 @@ background-color:rgb(70, 70, 70)</string>
         <height>121</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgb(0, 0, 83);
 border-radius:15px;
@@ -221,6 +328,9 @@ color: rgb(255, 255, 255)</string>
         <width>191</width>
         <height>121</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgb(0, 0, 83);
@@ -270,6 +380,9 @@ color: rgb(255, 255, 255)</string>
         <height>121</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgb(0, 0, 83);
 border-radius:15px;
@@ -308,6 +421,9 @@ color: rgb(255, 255, 255)</string>
          <height>311</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>CrossCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
@@ -331,6 +447,33 @@ color: rgb(255, 255, 255)</string>
         <height>261</height>
        </rect>
       </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>291</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(0, 0, 83);
+font: 700 10pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Avoid Heating Time in: 11AM-2PM</string>
+       </property>
+      </widget>
+      <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>291</width>
+         <height>211</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="Reminder_A" native="true">
@@ -342,6 +485,66 @@ color: rgb(255, 255, 255)</string>
        <height>541</height>
       </rect>
      </property>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../Downloads/btte-removebg-preview.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>51</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>81</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 83);
+font: 700 11pt &quot;Segoe UI&quot;;</string>
+      </property>
+      <property name="text">
+       <string>SelfNote</string>
+      </property>
+     </widget>
+     <zorder>pushButton_3</zorder>
+     <zorder>label_3</zorder>
+     <zorder>pushButton_4</zorder>
     </widget>
    </widget>
   </widget>
