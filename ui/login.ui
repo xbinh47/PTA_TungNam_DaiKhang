@@ -83,7 +83,7 @@ border-radius: 10px;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="btnusernam">
+    <widget class="QLineEdit" name="txtName">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -219,7 +219,7 @@ border-radius: 10px;</string>
     <zorder>label_3</zorder>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
-    <zorder>btnusernam</zorder>
+    <zorder>txtName</zorder>
     <zorder>lineEdit_2</zorder>
     <zorder>btn_login</zorder>
     <zorder>label_4</zorder>

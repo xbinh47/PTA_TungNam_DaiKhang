@@ -55,7 +55,7 @@ color: rgb(0, 0, 0);</string>
       <string>                    Sign Up</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="btnusername">
+    <widget class="QLineEdit" name="txtname">
      <property name="geometry">
       <rect>
        <x>260</x>
@@ -78,7 +78,7 @@ background-color: rgb(255, 255, 255) ;</string>
       <string>User-Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="btnpassword">
+    <widget class="QLineEdit" name="txtPass">
      <property name="geometry">
       <rect>
        <x>260</x>
@@ -101,7 +101,7 @@ background-color: rgb(255, 255, 255) ;</string>
       <string>Password:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="btnconfirmpassword">
+    <widget class="QLineEdit" name="txtConfirmPass">
      <property name="geometry">
       <rect>
        <x>260</x>
@@ -191,7 +191,7 @@ border-radius: 10px;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="btnemail">
+    <widget class="QLineEdit" name="txtEmail">
      <property name="geometry">
       <rect>
        <x>260</x>
