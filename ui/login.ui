@@ -83,7 +83,7 @@ border-radius: 10px;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="btnusernam">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -130,7 +130,7 @@ border-radius: 10px;</string>
       <string>PassWord:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btn_login">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -219,9 +219,9 @@ border-radius: 10px;</string>
     <zorder>label_3</zorder>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
-    <zorder>lineEdit</zorder>
+    <zorder>btnusernam</zorder>
     <zorder>lineEdit_2</zorder>
-    <zorder>pushButton</zorder>
+    <zorder>btn_login</zorder>
     <zorder>label_4</zorder>
     <zorder>btn_register</zorder>
    </widget>
