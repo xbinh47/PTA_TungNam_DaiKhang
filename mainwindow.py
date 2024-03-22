@@ -62,14 +62,15 @@ class Login(QtWidgets.QMainWindow):
         self.btn_login.clicked.connect(self.checkLogin)
         self.btn_register.clicked.connect(self.showRegisterPage)
     
-    def checkLogin():
-        email
-        password
+    def checkLogin(self):
+        email = self.txtEmail.text()
+        password = self.txtPassword.text()
 
     def showRegisterPage(self):
         registerPage.show()
         self.close()
     
+
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
     def insert_db(query):
@@ -79,7 +80,11 @@ if __name__ == '__main__':
         cusor.close()
 
     def query_db(query):
-        return
+        cursor = sqliteConnection.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall() #check if the result was in db(in list)
+        cursor.close()
+        return result
     
     app = QtWidgets.QApplication(sys.argv)
 
