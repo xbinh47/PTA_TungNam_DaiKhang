@@ -63,9 +63,7 @@ class Login(QtWidgets.QMainWindow):
         self.btn_register.clicked.connect(self.showRegisterPage)
     
     def checkLogin(self):
-        email = self.txtEmail.text()
-        password = self.txtPassword.text()
-
+        
     def showRegisterPage(self):
         registerPage.show()
         self.close()
