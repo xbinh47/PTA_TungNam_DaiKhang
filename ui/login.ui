@@ -107,7 +107,7 @@ border-radius: 10px;
       <string>User-Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="txtPass">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -220,7 +220,7 @@ border-radius: 10px;</string>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
     <zorder>txtName</zorder>
-    <zorder>lineEdit_2</zorder>
+    <zorder>txtPass</zorder>
     <zorder>btn_login</zorder>
     <zorder>label_4</zorder>
     <zorder>btn_register</zorder>

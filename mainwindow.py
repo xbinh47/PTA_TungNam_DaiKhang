@@ -63,7 +63,38 @@ class Login(QtWidgets.QMainWindow):
         self.btn_register.clicked.connect(self.showRegisterPage)
     
     def checkLogin(self):
-        
+        self.name = self.txtName.text()
+        password = self.txtPass.text()
+
+        if not self.name:
+            err_box.setText("Please enter your username!")
+            err_box.exec()
+            return
+
+        if not password:
+            err_box.setText("Please enter your password!")
+            err_box.exec()
+            return
+
+        query = f"SELECT * FROM USER WHERE password='{password}'"
+        results = query_db(query)
+
+        if not results:
+            err_box.setText("Account not found. Please register first!")
+            err_box.exec()
+            return
+
+        for result in results:
+            db_password = result[2]
+            if password == db_password:
+                success_box.setText("Login Successful!")
+                success_box.exec()
+                self.close()
+                return
+
+        # If the loop finishes without finding a matching password
+        err_box.setText("Incorrect email or password!")
+        err_box.exec()
     def showRegisterPage(self):
         registerPage.show()
         self.close()
