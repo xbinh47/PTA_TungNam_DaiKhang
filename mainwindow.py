@@ -85,7 +85,7 @@ class Login(QtWidgets.QMainWindow):
             return
 
         for result in results:
-            db_password = result[2]
+            db_password = result[len(results)]
             if password == db_password:
                 success_box.setText("Login Successful!")
                 success_box.exec()
@@ -93,7 +93,7 @@ class Login(QtWidgets.QMainWindow):
                 return
 
         # If the loop finishes without finding a matching password
-        err_box.setText("Incorrect email or password!")
+        err_box.setText("Incorrect username or password!")
         err_box.exec()
     def showRegisterPage(self):
         registerPage.show()
