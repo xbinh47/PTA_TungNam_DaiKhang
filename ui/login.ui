@@ -104,7 +104,10 @@ border-radius: 10px;
 </string>
      </property>
      <property name="text">
-      <string>User-Name:</string>
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>UserName:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txtPass">
@@ -127,7 +130,10 @@ border-radius: 10px;
 border-radius: 10px;</string>
      </property>
      <property name="text">
-      <string>PassWord:</string>
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Password:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_login">

@@ -75,7 +75,10 @@ color: rgb(0, 0, 0);</string>
 background-color: rgb(255, 255, 255) ;</string>
      </property>
      <property name="text">
-      <string>User-Name:</string>
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Username</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txtPass">
@@ -98,7 +101,10 @@ background-color: rgb(255, 255, 255) ;</string>
 background-color: rgb(255, 255, 255) ;</string>
      </property>
      <property name="text">
-      <string>Password:</string>
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="txtConfirmPass">
@@ -121,7 +127,10 @@ background-color: rgb(255, 255, 255) ;</string>
 background-color: rgb(255, 255, 255) ;</string>
      </property>
      <property name="text">
-      <string>Confirm PassWord:</string>
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Confirm Password:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnSignUp">
@@ -211,6 +220,9 @@ border-radius: 10px;</string>
 background-color: rgb(255, 255, 255) ;</string>
      </property>
      <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
       <string>Email:</string>
      </property>
     </widget>
