@@ -46,6 +46,7 @@ class Register(QtWidgets.QMainWindow):
         query = f"INSERT INTO USER (username, password, email) VALUES ('{self.name}', '{password}', '{email}')"
         print(query)
         insert_db(query)
+
         success_box.setText("Register Successfully!")
         loginPage.show()
         self.close()
@@ -63,11 +64,11 @@ class Login(QtWidgets.QMainWindow):
         self.btn_register.clicked.connect(self.showRegisterPage)
     
     def checkLogin(self):
-        self.name = self.txtName.text()
+        email = self.txtEmail.text()
         password = self.txtPass.text()
 
-        if not self.name:
-            err_box.setText("Please enter your username!")
+        if not email:
+            err_box.setText("Please enter your email!")
             err_box.exec()
             return
 
@@ -76,25 +77,17 @@ class Login(QtWidgets.QMainWindow):
             err_box.exec()
             return
 
-        query = f"SELECT * FROM USER WHERE password='{password}'"
-        results = query_db(query)
+        query = f"SELECT * FROM USER WHERE email ='{email}' and password='{password}'" #query select
+        result = insert_db(query)
 
-        if not results:
-            err_box.setText("Account not found. Please register first!")
+        if len(result) == 0:
+            err_box.setText("Invalid Username or Password!")
             err_box.exec()
             return
+        
+        success_box.setText("Succesfully Login!")
+        success_box.exec()
 
-        for result in results:
-            db_password = result[len(results)]
-            if password == db_password:
-                success_box.setText("Login Successful!")
-                success_box.exec()
-                self.close()
-                return
-
-        # If the loop finishes without finding a matching password
-        err_box.setText("Incorrect username or password!")
-        err_box.exec()
     def showRegisterPage(self):
         registerPage.show()
         self.close()
