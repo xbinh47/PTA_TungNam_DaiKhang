@@ -43,6 +43,14 @@ class Register(QtWidgets.QMainWindow):
             err_box.exec()
             return 
         
+        query = f"SELECT * FROM USER WHERE email = ('{email}')"
+        result = query_db(query)
+
+        if len(result) > 0:
+            err_box.setText("This email had been used for an another account!")
+            err_box.exec()
+            return
+        
         query = f"INSERT INTO USER (username, password, email) VALUES ('{self.name}', '{password}', '{email}')"
         print(query)
         insert_db(query)
@@ -78,7 +86,8 @@ class Login(QtWidgets.QMainWindow):
             return
 
         query = f"SELECT * FROM USER WHERE email ='{email}' and password='{password}'" #query select
-        result = insert_db(query)
+        result = query_db(query)
+        self.name = result[0][1]
 
         if len(result) == 0:
             err_box.setText("Invalid Username or Password!")
@@ -87,12 +96,28 @@ class Login(QtWidgets.QMainWindow):
         
         success_box.setText("Succesfully Login!")
         success_box.exec()
+        self.showMainPage()
 
     def showRegisterPage(self):
         registerPage.show()
         self.close()
-    
 
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
+
+class MainPage(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/main.ui", self)
+        self.name = ""
+    
+    def setUsername(self, name):
+        self.name = name
+        self.txtUsername.setText(name)
+
+    
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
     def insert_db(query):
@@ -113,6 +138,7 @@ if __name__ == '__main__':
     loginPage = Login()
     loginPage.show()
     registerPage = Register()
+    mainPage = MainPage()
 
     err_box = QMessageBox()
     err_box.setWindowTitle("Error.")

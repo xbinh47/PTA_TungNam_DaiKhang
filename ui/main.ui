@@ -136,6 +136,22 @@ color:rgb(0, 0, 0)</string>
       <string>Help?</string>
      </property>
     </widget>
+    <widget class="QLabel" name="txtUsername">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 10pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="SideBar" native="true">
     <property name="geometry">
@@ -250,25 +266,6 @@ background-color:rgb(70, 70, 70)</string>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>0</y>
-        <width>121</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../../../Downloads/Icons_Hydration-removebg-preview.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QPushButton" name="hydrationButton">
       <property name="geometry">
        <rect>
@@ -301,25 +298,6 @@ color: rgb(255, 255, 255)</string>
        <height>251</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>0</y>
-        <width>121</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../../../Downloads/Screenshot_2024-03-03_151650-removebg-preview.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QPushButton" name="activityButton">
       <property name="geometry">
        <rect>
@@ -352,25 +330,6 @@ color: rgb(255, 255, 255)</string>
        <height>251</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>0</y>
-        <width>121</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../../../Downloads/icons-removebg-preview.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QPushButton" name="drinksButton">
       <property name="geometry">
        <rect>
