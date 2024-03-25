@@ -444,29 +444,10 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
        <height>541</height>
       </rect>
      </property>
-     <widget class="QLabel" name="label_3">
+     <widget class="QPushButton" name="btn_reminder">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>71</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../../../Downloads/btte-removebg-preview.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
+        <x>20</x>
         <y>20</y>
         <width>51</width>
         <height>71</height>
@@ -484,26 +465,6 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>100</y>
-        <width>81</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:rgb(0, 0, 83);
-font: 700 11pt &quot;Segoe UI&quot;;</string>
-      </property>
-      <property name="text">
-       <string>SelfNote</string>
-      </property>
-     </widget>
-     <zorder>pushButton_3</zorder>
-     <zorder>label_3</zorder>
-     <zorder>pushButton_4</zorder>
     </widget>
    </widget>
   </widget>
