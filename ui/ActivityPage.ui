@@ -17,7 +17,7 @@
    <widget class="QWidget" name="UpperBar" native="true">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>10</y>
       <width>921</width>
       <height>61</height>
@@ -150,10 +150,49 @@ color:rgb(0, 0, 0)</string>
      </property>
     </widget>
    </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>80</y>
+      <width>431</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <widget class="QLineEdit" name="searchBar_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>431</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="accessibleName">
+      <string extracomment="Segoe UI,9,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px</string>
+     </property>
+     <property name="placeholderText">
+      <string>Edit Blog Title:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>431</width>
+       <height>481</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
    <widget class="QWidget" name="SideBar" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>10</y>
       <width>51</width>
       <height>581</height>
@@ -241,22 +280,41 @@ background-color:rgb(70, 70, 70)</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>51</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/decor.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>80</y>
-      <width>471</width>
+      <width>451</width>
       <height>511</height>
      </rect>
     </property>
     <widget class="QListWidget" name="listBlog">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>30</y>
-       <width>471</width>
+       <x>10</x>
+       <y>40</y>
+       <width>451</width>
        <height>481</height>
       </rect>
      </property>
@@ -269,17 +327,74 @@ background-color:rgb(70, 70, 70)</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>471</width>
+       <width>451</width>
        <height>26</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-radius:5px</string>
+      <string notr="true">border-radius:10px</string>
      </property>
      <property name="placeholderText">
       <string>Search Blog...</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>470</y>
+       <width>61</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/sun_decor.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>470</y>
+       <width>61</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/sun_decor.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>540</y>
+      <width>331</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/activity_img.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
  </widget>
