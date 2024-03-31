@@ -115,7 +115,7 @@ class MainPage(QtWidgets.QMainWindow):
         self.hydrationButton.clicked.connect(self.showHydration)
         self.activityButton.clicked.connect(self.showActivity)
         self.drinksButton.clicked.connect(self.showDrinks)
-        # self.btn_reminder.clicked.connect(self.showReminder)
+        self.btn_reminder.clicked.connect(self.showReminder)
         
     
     def setUsername(self, name):
@@ -134,9 +134,9 @@ class MainPage(QtWidgets.QMainWindow):
         drinksPage.show()
         self.close()
 
-    # def showReminder(self):
-    #     reminderPage.show()
-    #     self.close()
+    def showReminder(self):
+        reminderPage.show()
+        self.close()
 
 class Hydration(QtWidgets.QMainWindow):
     def __init__(self):
@@ -174,17 +174,17 @@ class Drinks(QtWidgets.QMainWindow):
         mainPage.show()
         self.close()
 
-# class Reminder(QtWidgets.QMainWindow):
-#     def __init__(self):
-#         super().__init__() 
-#         uic.loadUi("ui/ReminderPage.ui", self)
-#         self.name = ""
-#         self.houseButton.clicked.connect(self.showMainPage)
+class Reminder(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/ReminderPage.ui", self)
+        self.name = ""
+        self.houseButton.clicked.connect(self.showMainPage)
 
-#     def showMainPage(self):
-#         mainPage.setUsername(self.name)
-#         mainPage.show()
-#         self.close()
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
 
 
 #IMPORTANT STUFF
@@ -212,12 +212,12 @@ if __name__ == '__main__':
     hydrationPage = Hydration()
     activityPage = Activity()
     drinksPage = Drinks()
-    # reminderPage = Reminder()
+    reminderPage = Reminder()
 
     err_box = QMessageBox()
     err_box.setWindowTitle("Error.")
     err_box.setIcon(QMessageBox.Icon.Warning)
-    # msg_box.setStyleSheet()
+    # err_box.setStyleSheet()
     
     success_box = QMessageBox()
     success_box.setWindowTitle("Success!")
