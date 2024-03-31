@@ -211,7 +211,7 @@ if __name__ == '__main__':
     mainPage = MainPage()
     hydrationPage = Hydration()
     activityPage = Activity()
-    # drinksPage = Drinks()
+    drinksPage = Drinks()
     # reminderPage = Reminder()
 
     err_box = QMessageBox()
