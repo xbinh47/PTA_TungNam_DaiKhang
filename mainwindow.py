@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QMessageBox
 from PyQt6 import uic
 import sys
 import sqlite3
-
+#CLASS THOSE PAGES
 class Register(QtWidgets.QMainWindow):
     def __init__ (self):
         super().__init__()
@@ -112,12 +112,57 @@ class MainPage(QtWidgets.QMainWindow):
         super().__init__() 
         uic.loadUi("ui/main.ui", self)
         self.name = ""
+        self.hydrationButton.clicked.connect(self.showHydration)
+        self.activityButton.clicked.connect(self.showActivity)
+        self.drinksButton.clicked.connect(self.showDrinks)
+        self.btn_reminder.clicked.connect(self.showReminder)
     
     def setUsername(self, name):
         self.name = name
         self.txtUsername.setText(name)
 
-    
+    def showHydration(self):
+        hydrationPage.show()
+        self.close()
+
+    def showActivity(self):
+        activityPage.show()
+        self.close()    
+
+    def showDrinks(self):
+        drinksPage.show()
+        self.close()
+
+    def showReminder(self):
+        reminderPage.show()
+        self.close()
+
+class Hydration(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/HydrationPage.ui", self)
+        self.name = ""
+
+class Activity(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/ActivityPage.ui", self)
+        self.name = ""
+
+class Drinks(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/DrinksPage.ui", self)
+        self.name = ""
+
+class Reminder(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__() 
+        uic.loadUi("ui/ReminderPage.ui", self)
+        self.name = ""
+
+
+#IMPORTANT STUFF
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
     def insert_db(query):
@@ -135,10 +180,14 @@ if __name__ == '__main__':
     
     app = QtWidgets.QApplication(sys.argv)
 
-    loginPage = Login()
+    loginPage = Login() #set page
     loginPage.show()
     registerPage = Register()
     mainPage = MainPage()
+    hydrationPage = Hydration()
+    activityPage = Activity()
+    drinksPage = Drinks()
+    reminderPage = Reminder()
 
     err_box = QMessageBox()
     err_box.setWindowTitle("Error.")

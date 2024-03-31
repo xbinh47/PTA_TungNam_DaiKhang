@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
+    <width>906</width>
     <height>650</height>
    </rect>
   </property>
@@ -62,7 +62,7 @@ background-color:rgb(232, 232, 232);</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../A.Icons/house-solid.svg</pixmap>
+      <pixmap>../img/house-solid.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -81,7 +81,7 @@ background-color:rgb(232, 232, 232);</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../A.Icons/bell-regular.svg</pixmap>
+      <pixmap>../img/bell-regular.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -179,7 +179,7 @@ background-color:rgb(70, 70, 70)</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../A.Icons/gear-solid.svg</pixmap>
+      <pixmap>../img/gear-solid.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -217,7 +217,7 @@ background-color:rgb(70, 70, 70)</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../A.Icons/bars-solid.svg</pixmap>
+      <pixmap>../img/bars-solid.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -288,6 +288,25 @@ color: rgb(255, 255, 255)</string>
        <string>Hydration</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>101</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/icon hydration2.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Options2" native="true">
      <property name="geometry">
@@ -320,6 +339,25 @@ color: rgb(255, 255, 255)</string>
        <string>Activities</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/icon_act.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Options3" native="true">
      <property name="geometry">
@@ -350,6 +388,25 @@ color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Drinks</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>101</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/icon reminde.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -390,7 +447,7 @@ color: rgb(255, 255, 255)</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Pictures/Screenshots/bg2.png</pixmap>
+        <pixmap>../img/mainpage_img.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -438,19 +495,22 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
     <widget class="QWidget" name="Reminder_A" native="true">
      <property name="geometry">
       <rect>
-       <x>749</x>
+       <x>750</x>
        <y>10</y>
        <width>91</width>
        <height>541</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(0, 0, 127)</string>
+     </property>
      <widget class="QPushButton" name="btn_reminder">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>51</width>
-        <height>71</height>
+        <x>0</x>
+        <y>10</y>
+        <width>81</width>
+        <height>161</height>
        </rect>
       </property>
       <property name="font">
@@ -459,10 +519,10 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
-       <string/>
+       <string>REMINDER</string>
       </property>
      </widget>
     </widget>
