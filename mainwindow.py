@@ -116,6 +116,7 @@ class MainPage(QtWidgets.QMainWindow):
         self.activityButton.clicked.connect(self.showActivity)
         self.drinksButton.clicked.connect(self.showDrinks)
         self.btn_reminder.clicked.connect(self.showReminder)
+        
     
     def setUsername(self, name):
         self.name = name
@@ -142,24 +143,48 @@ class Hydration(QtWidgets.QMainWindow):
         super().__init__() 
         uic.loadUi("ui/HydrationPage.ui", self)
         self.name = ""
+        self.houseButton.clicked.connect(self.showMainPage)
+
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
 
 class Activity(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__() 
         uic.loadUi("ui/ActivityPage.ui", self)
         self.name = ""
+        self.houseButton.clicked.connect(self.showMainPage)
+
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
 
 class Drinks(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__() 
         uic.loadUi("ui/DrinksPage.ui", self)
         self.name = ""
+        self.houseButton.clicked.connect(self.showMainPage)
+
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
 
 class Reminder(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__() 
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
+        self.houseButton.clicked.connect(self.showMainPage)
+
+    def showMainPage(self):
+        mainPage.setUsername(self.name)
+        mainPage.show()
+        self.close()
 
 
 #IMPORTANT STUFF
