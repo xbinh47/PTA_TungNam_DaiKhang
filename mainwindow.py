@@ -1,7 +1,7 @@
 from PyQt6 import QtWidgets 
-from PyQt6.QtCore import QTimer, QTime, QDateTime
+from PyQt6.QtCore import QTimer
 from datetime import datetime, timedelta #import for time set
-from PyQt6.QtWidgets import QMessageBox, QMainWindow, QApplication
+from PyQt6.QtWidgets import QMessageBox, QMainWindow
 from PyQt6 import uic
 import sys
 import sqlite3
@@ -126,7 +126,7 @@ class MainPage(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Hydration Reminder", "Remember to drink water!", QMessageBox.StandardButton.Ok) # Set the auto Reminder in main for 2h
 
     def startAutoReminder(self):
-        two_hours = 2 * 60 * 60 * 1000 # milliseconds
+        two_hours = 2 * 60 * 60 * 1000 # milliseconds ==> 2 hours
         self.timer.start(two_hours)
     
     def setUsername(self, name):
@@ -196,7 +196,6 @@ class Reminder(QMainWindow):
     
     def setReminder(self):
         reminder_time = self.timeReminder.time().toPyTime() 
-        reminder_datetime = datetime.combine(datetime.now(), reminder_time)
 
 #IMPORTANT STUFF
 if __name__ == '__main__':
