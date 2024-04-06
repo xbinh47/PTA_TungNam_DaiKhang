@@ -222,6 +222,6 @@ if __name__ == '__main__':
     success_box = QMessageBox()
     success_box.setWindowTitle("Success!")
     success_box.setIcon(QMessageBox.Icon.Information)
-    # success_box.setStyleSheet
+    # success_box.setStyleSheet()
     app.exec()
     

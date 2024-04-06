@@ -65,7 +65,7 @@ background-color:rgb(232, 232, 232);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="houseButton">
+    <widget class="QPushButton" name="houseBtn">
      <property name="geometry">
       <rect>
        <x>720</x>
@@ -135,7 +135,7 @@ background-color:rgb(232, 232, 232);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="helpBtn">
      <property name="geometry">
       <rect>
        <x>570</x>
@@ -157,7 +157,7 @@ color:rgb(0, 0, 0)</string>
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>51</width>
+       <width>41</width>
        <height>41</height>
       </rect>
      </property>
@@ -242,7 +242,7 @@ background-color:rgb(70, 70, 70)</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="BarBtn">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -292,6 +292,19 @@ background-color:rgb(70, 70, 70)</string>
       <height>511</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255)</string>
+    </property>
+    <widget class="QCalendarWidget" name="calendarWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>392</width>
+       <height>236</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
