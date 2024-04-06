@@ -255,7 +255,7 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
 
     loginPage = Login() #set page
-    # loginPage.show()
+    loginPage.show()
     registerPage = Register()
     mainPage = MainPage()
     hydrationPage = Hydration()
