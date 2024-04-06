@@ -125,8 +125,8 @@ class MainPage(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Hydration Reminder", "Remember to drink water!", QMessageBox.StandardButton.Ok) # Set the auto Reminder in main for 2h
 
     def startAutoReminder(self):
-        two_hours = 2 * 60 * 60 * 1000 # milliseconds ==> 2 hours
-        self.timer.start(two_hours)
+        hour = 60 * 60 * 1000 # milliseconds ==> 1 hour
+        self.timer.start(hour)
     
     def setUsername(self, name):
         self.name = name
