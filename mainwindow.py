@@ -193,8 +193,8 @@ class Reminder(QMainWindow):
         mainPage.show()
         self.close()
     
-    def setReminder(self):
-        reminder_time = self.timeReminder.time().toPyTime() 
+    # def setReminder(self):
+    #     reminder_time = self.timeReminder.time().toPyTime() 
 
 #IMPORTANT STUFF
 if __name__ == '__main__':
