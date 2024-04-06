@@ -1,6 +1,5 @@
 from PyQt6 import QtWidgets 
 from PyQt6.QtCore import QTimer
-from datetime import datetime, timedelta #import for time set
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
 from PyQt6 import uic
 import sys
@@ -187,7 +186,7 @@ class Reminder(QMainWindow):
         super().__init__() 
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
-        self.houseButton.clicked.connect(self.showMainPage)
+        self.houseBtn.clicked.connect(self.showMainPage)
         self.reminderBtn.clicked.connect(self.setReminder)
 
     def showMainPage(self):

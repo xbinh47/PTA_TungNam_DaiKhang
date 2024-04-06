@@ -109,6 +109,9 @@ background-color:rgb(232, 232, 232);</string>
        <height>29</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color:rgba(0,0,0)</string>
      </property>
@@ -202,6 +205,9 @@ color:rgb(0, 0, 0)</string>
        <width>401</width>
        <height>51</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;

@@ -49,25 +49,6 @@ background-color:rgb(232, 232, 232);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>770</x>
-       <y>20</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/house-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
@@ -94,22 +75,6 @@ background-color:rgb(232, 232, 232);</string>
        <y>20</y>
        <width>31</width>
        <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgba(0,0,0)</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="houseButton">
-     <property name="geometry">
-      <rect>
-       <x>770</x>
-       <y>20</y>
-       <width>31</width>
-       <height>29</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -158,7 +123,7 @@ color:rgb(0, 0, 0)</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>600</x>
+       <x>770</x>
        <y>10</y>
        <width>41</width>
        <height>41</height>
@@ -264,6 +229,25 @@ background-color:rgb(70, 70, 70)</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>51</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/decor.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -545,6 +529,25 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="text">
        <string>REMINDER</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>180</y>
+        <width>81</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../img/decor.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
