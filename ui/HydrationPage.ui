@@ -321,7 +321,7 @@ background-color:rgb(70, 70, 70)</string>
       <string notr="true">border-radius:10px</string>
      </property>
      <property name="placeholderText">
-      <string>Edit Blog Title:</string>
+      <string>Add Blog:</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="BlogEdit">
