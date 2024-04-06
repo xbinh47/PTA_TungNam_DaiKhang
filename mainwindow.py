@@ -4,6 +4,8 @@ from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetIt
 from PyQt6 import uic
 import sys
 import sqlite3
+import plyer
+from plyer import notification
 from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
 class Register(QtWidgets.QMainWindow):
@@ -55,7 +57,7 @@ class Register(QtWidgets.QMainWindow):
         
         query = f"INSERT INTO USER (username, password, email) VALUES ('{self.name}', '{password}', '{email}')"
         print(query)
-        insert_db(query)
+        execute_db(query)
 
         success_box.setText("Register Successfully!")
         loginPage.show()
@@ -117,17 +119,21 @@ class MainPage(QtWidgets.QMainWindow):
         self.hydrationButton.clicked.connect(self.showHydration)
         self.activityButton.clicked.connect(self.showActivity)
         self.drinksButton.clicked.connect(self.showDrinks)
-
         self.btn_reminder.clicked.connect(self.showReminder)
         self.timer = QTimer(self)
         self.startAutoReminder() #start the timer 2h
         self.timer.timeout.connect(self.autoReminder)
 
     def autoReminder(self):
-        QMessageBox.information(self, "Hydration Reminder", "Remember to drink water!", QMessageBox.StandardButton.Ok) # Set the auto Reminder in main for 2h
+        notification.notify(
+        title='Hydration Reminder',
+        message='Remember to drink water!',
+        app_name='Summery',
+        # app_icon='C:\\Users\\ADMIN\\Documents\\GitHub\\PTA_TungNam_DaiKhang\\img\\logo.png'
+        )
 
     def startAutoReminder(self):
-        hour = 60 * 60 * 1000 # milliseconds
+        hour = 60 * 1000 # milliseconds ==> currently sets for 1 minute
         self.timer.start(hour)
     
     def setUsername(self, name):
@@ -186,7 +192,7 @@ class Hydration(QtWidgets.QMainWindow):
             return
         
         query = f"INSERT INTO BLOG_Hydration (title, content) VALUES ('{title}', '{content}')"
-        insert_db(query)
+        execute_db(query)
         success_box.setText("Blog added successfully!")
         success_box.exec()
         self.resetBlog()
@@ -234,7 +240,7 @@ class Activity(QtWidgets.QMainWindow):
             err_box.exec()
             return
         query = f"INSERT INTO BLOG_Activity (title, content) VALUES ('{title}', '{content}')"
-        insert_db(query)
+        execute_db(query)
         success_box.setText("Blog added successfully!")
         success_box.exec()
         self.resetBlog()
@@ -282,7 +288,7 @@ class Drinks(QtWidgets.QMainWindow):
             err_box.exec()
             return
         query = f"INSERT INTO BLOG_Drinks (title, content) VALUES ('{title}', '{content}')"
-        insert_db(query)
+        execute_db(query)
         success_box.setText("Blog added successfully!")
         success_box.exec()
         self.resetBlog()
@@ -302,7 +308,7 @@ class Reminder(QMainWindow):
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
         self.houseBtn.clicked.connect(self.showMainPage)
-        self.reminderBtn.clicked.connect(self.setReminder)
+        # self.reminderBtn.clicked.connect(self.setReminder) ==> Progress in the future
 
     def showMainPage(self):
         mainPage.show()
@@ -315,7 +321,7 @@ class Reminder(QMainWindow):
 #IMPORTANT STUFF
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
-    def insert_db(query):
+    def execute_db(query):
         cusor = sqliteConnection.cursor()
         cusor.execute(query)
         sqliteConnection.commit()
