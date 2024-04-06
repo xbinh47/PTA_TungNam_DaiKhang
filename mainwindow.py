@@ -1,11 +1,11 @@
 from PyQt6 import QtWidgets 
 from PyQt6.QtCore import QTimer
-from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetItem
+from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetItem, QDialog, QPushButton, QTextEdit, QVBoxLayout
 from PyQt6 import uic
 import sys
 import sqlite3
-import plyer
-from plyer import notification
+import plyer 
+from plyer import notification #used for getting notify in the corner of the laptop, not QMessageBox
 from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
 class Register(QtWidgets.QMainWindow):
@@ -121,7 +121,7 @@ class MainPage(QtWidgets.QMainWindow):
         self.drinksButton.clicked.connect(self.showDrinks)
         self.btn_reminder.clicked.connect(self.showReminder)
         self.timer = QTimer(self)
-        self.startAutoReminder() #start the timer 2h
+        self.startAutoReminder() #start the timer 
         self.timer.timeout.connect(self.autoReminder)
 
     def autoReminder(self):
@@ -165,7 +165,15 @@ class Hydration(QtWidgets.QMainWindow):
         self.listBlog = self.findChild(QListWidget, 'listBlog')
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
+        self.listBlog.itemClicked.connect(self.onItemClicked)
         self.loadBlog()
+
+    def onItemClicked(self, item):
+        widget = self.listBlog.itemWidget(item)
+        title = widget.title
+        content = widget.content
+        dialog = Dialog(title, content)
+        dialog.exec()
 
     def loadBlog(self):
         query = "SELECT * FROM BLOG_Hydration"
@@ -214,7 +222,15 @@ class Activity(QtWidgets.QMainWindow):
         self.listBlog = self.findChild(QListWidget, 'listBlog')
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
+        self.listBlog.itemClicked.connect(self.onItemClicked)
         self.loadBlog()
+
+    def onItemClicked(self, item):
+        widget = self.listBlog.itemWidget(item)
+        title = widget.title
+        content = widget.content
+        dialog = Dialog(title, content)
+        dialog.exec()
 
     def loadBlog(self):
         query = "SELECT * FROM BLOG_Activity"
@@ -262,7 +278,15 @@ class Drinks(QtWidgets.QMainWindow):
         self.listBlog = self.findChild(QListWidget, 'listBlog')
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
+        self.listBlog.itemClicked.connect(self.onItemClicked)
         self.loadBlog()
+
+    def onItemClicked(self, item):
+        widget = self.listBlog.itemWidget(item)
+        title = widget.title
+        content = widget.content
+        dialog = Dialog(title, content)
+        dialog.exec()
 
     def loadBlog(self):
         query = "SELECT * FROM BLOG_Drinks"
@@ -318,6 +342,22 @@ class Reminder(QMainWindow):
     #     reminder_time = self.timeReminder.time().toPyTime() 
     #     reminder_datetime = datetime.combine(datetime.now(), reminder_time)
 
+class Dialog(QDialog):
+    def __init__(self, title, text):
+        super().__init__()
+
+        self.setWindowTitle(title)
+        self.setLayout(QVBoxLayout())
+
+        self.textEdit = QTextEdit()
+        self.textEdit.setReadOnly(True)  # Make the text read-only
+        self.textEdit.setText(text)
+        self.layout().addWidget(self.textEdit)
+
+        closeButton = QPushButton("Close")
+        closeButton.clicked.connect(self.close)
+        self.layout().addWidget(closeButton)
+
 #IMPORTANT STUFF
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
@@ -355,4 +395,3 @@ if __name__ == '__main__':
     success_box.setIcon(QMessageBox.Icon.Information)
     # success_box.setStyleSheet()
     app.exec()
-    
