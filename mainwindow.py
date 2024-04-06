@@ -1,9 +1,11 @@
 from PyQt6 import QtWidgets 
-from PyQt6.QtCore import QTimer
-from PyQt6.QtWidgets import QMessageBox, QMainWindow
+from PyQt6.QtCore import QTimer, QTime, QDateTime
+from datetime import datetime, timedelta #import for time set
+from PyQt6.QtWidgets import QMessageBox, QMainWindow, QApplication, QListWidget, QListWidgetItem
 from PyQt6 import uic
 import sys
 import sqlite3
+from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
 class Register(QtWidgets.QMainWindow):
     def __init__ (self):
@@ -125,8 +127,8 @@ class MainPage(QtWidgets.QMainWindow):
         QMessageBox.information(self, "Hydration Reminder", "Remember to drink water!", QMessageBox.StandardButton.Ok) # Set the auto Reminder in main for 2h
 
     def startAutoReminder(self):
-        hour = 60 * 60 * 1000 # milliseconds ==> 1 hour
-        self.timer.start(hour)
+        two_hours = 2 * 60 * 60 * 1000 # milliseconds
+        self.timer.start(two_hours)
     
     def setUsername(self, name):
         self.name = name
@@ -153,7 +155,44 @@ class Hydration(QtWidgets.QMainWindow):
         super().__init__() 
         uic.loadUi("ui/HydrationPage.ui", self)
         self.name = ""
+        self.listBlog = self.findChild(QListWidget, 'listBlog')
         self.houseButton.clicked.connect(self.showMainPage)
+        self.blogBtn.clicked.connect(self.addBlog)
+        self.loadBlog()
+
+    def loadBlog(self):
+        query = "SELECT * FROM BLOG"
+        result = query_db(query)
+        self.listBlog.clear()
+        for blog in result:
+            item = QListWidgetItem(self.listBlog)
+            self.listBlog.addItem(item)
+            custom_widget = CustomListItemWidget(blog[0], blog[1], blog[2])
+            custom_widget.setStyleSheet("background-color: #f0f0f0; border-radius: 10px; padding: 10px;")
+            self.listBlog.setItemWidget(item, custom_widget)
+            item.setSizeHint(custom_widget.sizeHint())
+
+    def addBlog(self):
+        title = self.TitleBar.text()
+        content = self.BlogEdit.toPlainText()
+        if title == "":
+            err_box.setText("Please enter the title!")
+            err_box.exec()
+            return
+        if content == "":
+            err_box.setText("Please enter the content!")
+            err_box.exec()
+            return
+        query = f"INSERT INTO BLOG (title, content) VALUES ('{title}', '{content}')"
+        insert_db(query)
+        success_box.setText("Blog added successfully!")
+        success_box.exec()
+        self.resetBlog()
+        self.loadBlog()
+
+    def resetBlog(self):
+        self.TitleBar.setText("")
+        self.BlogEdit.setText("")
 
     def showMainPage(self):
         mainPage.show()
@@ -186,15 +225,16 @@ class Reminder(QMainWindow):
         super().__init__() 
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
-        self.houseBtn.clicked.connect(self.showMainPage)
+        self.houseButton.clicked.connect(self.showMainPage)
         self.reminderBtn.clicked.connect(self.setReminder)
 
     def showMainPage(self):
         mainPage.show()
         self.close()
     
-    # def setReminder(self):
-    #     reminder_time = self.timeReminder.time().toPyTime() 
+    def setReminder(self):
+        reminder_time = self.timeReminder.time().toPyTime() 
+        reminder_datetime = datetime.combine(datetime.now(), reminder_time)
 
 #IMPORTANT STUFF
 if __name__ == '__main__':
@@ -215,10 +255,11 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
 
     loginPage = Login() #set page
-    loginPage.show()
+    # loginPage.show()
     registerPage = Register()
     mainPage = MainPage()
     hydrationPage = Hydration()
+    hydrationPage.show()
     activityPage = Activity()
     drinksPage = Drinks()
     reminderPage = Reminder()
