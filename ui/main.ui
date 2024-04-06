@@ -159,9 +159,9 @@ color:rgb(0, 0, 0)</string>
      <property name="geometry">
       <rect>
        <x>600</x>
-       <y>20</y>
+       <y>10</y>
        <width>41</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">

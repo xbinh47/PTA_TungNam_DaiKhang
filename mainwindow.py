@@ -1,5 +1,7 @@
 from PyQt6 import QtWidgets 
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtCore import QTimer, QTime, QDateTime
+from datetime import datetime, timedelta #import for time set
+from PyQt6.QtWidgets import QMessageBox, QMainWindow, QApplication
 from PyQt6 import uic
 import sys
 import sqlite3
@@ -116,7 +118,16 @@ class MainPage(QtWidgets.QMainWindow):
         self.activityButton.clicked.connect(self.showActivity)
         self.drinksButton.clicked.connect(self.showDrinks)
         self.btn_reminder.clicked.connect(self.showReminder)
-        
+        self.timer = QTimer(self)
+        self.startAutoReminder() #start the timer 2h
+        self.timer.timeout.connect(self.autoReminder)
+
+    def autoReminder(self):
+        QMessageBox.information(self, "Hydration Reminder", "Remember to drink water!", QMessageBox.StandardButton.Ok) # Set the auto Reminder in main for 2h
+
+    def startAutoReminder(self):
+        two_hours = 2 * 60 * 60 * 1000 # milliseconds
+        self.timer.start(two_hours)
     
     def setUsername(self, name):
         self.name = name
@@ -171,17 +182,21 @@ class Drinks(QtWidgets.QMainWindow):
         mainPage.show()
         self.close()
 
-class Reminder(QtWidgets.QMainWindow):
+class Reminder(QMainWindow):
     def __init__(self):
         super().__init__() 
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
         self.houseButton.clicked.connect(self.showMainPage)
+        self.reminderBtn.clicked.connect(self.setReminder)
 
     def showMainPage(self):
         mainPage.show()
         self.close()
-
+    
+    def setReminder(self):
+        reminder_time = self.timeReminder.time().toPyTime() 
+        reminder_datetime = datetime.combine(datetime.now(), reminder_time)
 
 #IMPORTANT STUFF
 if __name__ == '__main__':

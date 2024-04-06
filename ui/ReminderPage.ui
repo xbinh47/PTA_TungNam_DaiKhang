@@ -81,25 +81,6 @@ background-color:rgb(232, 232, 232);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>720</x>
-       <y>20</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../img/house-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="bellButton">
      <property name="geometry">
       <rect>
@@ -166,6 +147,25 @@ color:rgb(0, 0, 0)</string>
      </property>
      <property name="pixmap">
       <pixmap>../img/logo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../img/house-solid.svg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -332,13 +332,13 @@ color:rgb(0, 0, 83);
        <string>REMINDER</string>
       </property>
      </widget>
-     <widget class="QTimeEdit" name="timeEdit">
+     <widget class="QTimeEdit" name="timeReminder">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>110</y>
         <width>351</width>
-        <height>26</height>
+        <height>31</height>
        </rect>
       </property>
      </widget>
@@ -413,9 +413,9 @@ border-radius:15px
      <property name="geometry">
       <rect>
        <x>390</x>
-       <y>20</y>
+       <y>180</y>
        <width>281</width>
-       <height>371</height>
+       <height>211</height>
       </rect>
      </property>
      <property name="text">
