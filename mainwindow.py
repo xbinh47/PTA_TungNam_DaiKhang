@@ -146,7 +146,6 @@ class Hydration(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
 
     def showMainPage(self):
-        mainPage.setUsername(self.name)
         mainPage.show()
         self.close()
 
@@ -158,7 +157,6 @@ class Activity(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
 
     def showMainPage(self):
-        mainPage.setUsername(self.name)
         mainPage.show()
         self.close()
 
@@ -170,7 +168,6 @@ class Drinks(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
 
     def showMainPage(self):
-        mainPage.setUsername(self.name)
         mainPage.show()
         self.close()
 
@@ -182,7 +179,6 @@ class Reminder(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
 
     def showMainPage(self):
-        mainPage.setUsername(self.name)
         mainPage.show()
         self.close()
 
