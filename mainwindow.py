@@ -166,7 +166,21 @@ class Hydration(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
         self.listBlog.itemClicked.connect(self.onItemClicked)
+        self.searchBar.textChanged.connect(self.search)
         self.loadBlog()
+
+    def search(self):
+        search_title = self.searchBar.text()
+        query = f"SELECT * FROM BLOG_Hydration WHERE title like '%{search_title}%'" # %% check all txt in title / otherwise only checking 1st txt
+        result = query_db(query)
+        self.listBlog.clear()
+        for blog in result:
+            item = QListWidgetItem(self.listBlog)
+            self.listBlog.addItem(item)
+            custom_widget = CustomListItemWidget(blog[0], blog[1], blog[2])
+            custom_widget.setStyleSheet("background-color: #f0f0f0; border-radius: 10px; padding: 10px;")
+            self.listBlog.setItemWidget(item, custom_widget)
+            item.setSizeHint(custom_widget.sizeHint()) 
 
     def onItemClicked(self, item):
         widget = self.listBlog.itemWidget(item)
@@ -223,7 +237,21 @@ class Activity(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
         self.listBlog.itemClicked.connect(self.onItemClicked)
+        self.searchBar.textChanged.connect(self.search)
         self.loadBlog()
+
+    def search(self):
+        search_title = self.searchBar.text()
+        query = f"SELECT * FROM BLOG_Activity WHERE title like '%{search_title}%'" 
+        result = query_db(query)
+        self.listBlog.clear()
+        for blog in result:
+            item = QListWidgetItem(self.listBlog)
+            self.listBlog.addItem(item)
+            custom_widget = CustomListItemWidget(blog[0], blog[1], blog[2])
+            custom_widget.setStyleSheet("background-color: #f0f0f0; border-radius: 10px; padding: 10px;")
+            self.listBlog.setItemWidget(item, custom_widget)
+            item.setSizeHint(custom_widget.sizeHint()) 
 
     def onItemClicked(self, item):
         widget = self.listBlog.itemWidget(item)
@@ -279,7 +307,21 @@ class Drinks(QtWidgets.QMainWindow):
         self.houseButton.clicked.connect(self.showMainPage)
         self.blogBtn.clicked.connect(self.addBlog)
         self.listBlog.itemClicked.connect(self.onItemClicked)
+        self.searchBar.textChanged.connect(self.search)
         self.loadBlog()
+
+    def search(self):
+        search_title = self.searchBar.text()
+        query = f"SELECT * FROM BLOG_Activity WHERE title like '%{search_title}%'" 
+        result = query_db(query)
+        self.listBlog.clear()
+        for blog in result:
+            item = QListWidgetItem(self.listBlog)
+            self.listBlog.addItem(item)
+            custom_widget = CustomListItemWidget(blog[0], blog[1], blog[2])
+            custom_widget.setStyleSheet("background-color: #f0f0f0; border-radius: 10px; padding: 10px;")
+            self.listBlog.setItemWidget(item, custom_widget)
+            item.setSizeHint(custom_widget.sizeHint())         
 
     def onItemClicked(self, item):
         widget = self.listBlog.itemWidget(item)
