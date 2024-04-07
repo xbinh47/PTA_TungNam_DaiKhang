@@ -1,8 +1,8 @@
 from PyQt6 import QtWidgets 
 from PyQt6.QtCore import QTimer,QTime
 from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetItem, QDialog, QPushButton, QTextEdit, QVBoxLayout
-from PyQt6 import uic
-import sys
+from PyQt6 import uic # module so that it is able to load ui file
+import sys #used for tasks related to system-specific parameters, environment variables, and interaction with the Python interpreter itself.
 import sqlite3
 from plyer import notification #used for getting notify in the corner of the laptop, not QMessageBox
 from custom_widget.CustomListItem import CustomListItemWidget
@@ -421,7 +421,7 @@ class Dialog(QDialog):
         self.layout().addWidget(closeButton)
 
 #IMPORTANT STUFF
-if __name__ == '__main__':
+if __name__ == '__main__': # check if this python file is being run as the main program rather than a script to another module
     sqliteConnection = sqlite3.connect('data/data.db')
     def execute_db(query): #insert, execute data in table
         cusor = sqliteConnection.cursor()
