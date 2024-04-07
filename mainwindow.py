@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets 
-from PyQt6.QtCore import QTimer
+from PyQt6.QtCore import QTimer,QTime
 from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetItem, QDialog, QPushButton, QTextEdit, QVBoxLayout
 from PyQt6 import uic
 import sys
@@ -374,16 +374,36 @@ class Reminder(QMainWindow):
         uic.loadUi("ui/ReminderPage.ui", self)
         self.name = ""
         self.houseBtn.clicked.connect(self.showMainPage)
-        # self.reminderBtn.clicked.connect(self.setReminder) ==> Progress in the future
+        self.reminderBtn.clicked.connect(self.setReminder)
+        self.reminder_time = None  # Initialize reminder_time attribute
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.checkTime)  # Connect the timer timeout to checkTime method
+        self.timer.start(1000)  # Start the timer to check every second
 
     def showMainPage(self):
         mainPage.show()
         self.close()
     
-    # def setReminder(self):
-    #     reminder_time = self.timeReminder.time().toPyTime() 
-    #     reminder_datetime = datetime.combine(datetime.now(), reminder_time)
+    def setReminder(self):
+        self.reminder_time = self.timeReminder.time().toString("hh:mm")  # Get the reminder time in string format
+        self.reminder_message = self.txtReminder.text()  # Get the reminder message
+        success_box.setText("Reminder set successfully!")
+        success_box.exec()
+        self.timer.start()
 
+    def checkTime(self):
+        if self.reminder_time is not None:
+            current_time = QTime.currentTime().toString("hh:mm")  # Get the current time in string format
+            if current_time == self.reminder_time:
+                notification.notify(
+                    title='Reminder',
+                    message=self.reminder_message,
+                    app_name = 'Summery',
+                    timeout=10,  # Timeout for the notification in seconds ==> 10 secs
+                )
+                self.timer.stop()
+                self.reminder_time = None
+                self.reminder_message = None
 class Dialog(QDialog):
     def __init__(self, title, text):
         super().__init__()
