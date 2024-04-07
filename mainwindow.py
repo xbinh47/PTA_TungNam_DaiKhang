@@ -4,7 +4,6 @@ from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetIt
 from PyQt6 import uic
 import sys
 import sqlite3
-import plyer
 from plyer import notification #used for getting notify in the corner of the laptop, not QMessageBox
 from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
@@ -403,7 +402,7 @@ class Reminder(QMainWindow):
                 )
                 self.timer.stop()
                 self.reminder_time = None
-                self.reminder_message = None
+                self.reminder_message = None #clear
 
 class Dialog(QDialog):
     def __init__(self, title, text):
@@ -424,7 +423,7 @@ class Dialog(QDialog):
 #IMPORTANT STUFF
 if __name__ == '__main__':
     sqliteConnection = sqlite3.connect('data/data.db')
-    def execute_db(query):
+    def execute_db(query): #insert, execute data in table
         cusor = sqliteConnection.cursor()
         cusor.execute(query)
         sqliteConnection.commit()
