@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetIt
 from PyQt6 import uic
 import sys
 import sqlite3
-import plyer 
+import plyer
 from plyer import notification #used for getting notify in the corner of the laptop, not QMessageBox
 from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
@@ -404,7 +404,7 @@ class Reminder(QMainWindow):
                 self.timer.stop()
                 self.reminder_time = None
                 self.reminder_message = None
-                
+
 class Dialog(QDialog):
     def __init__(self, title, text):
         super().__init__()
