@@ -133,7 +133,7 @@ class MainPage(QtWidgets.QMainWindow):
         )
 
     def startAutoReminder(self):
-        hour = 60 * 1000 # milliseconds ==> currently sets for 1 minute
+        hour = 60 * 1000 # milliseconds ==> currently set for 1 minute
         self.timer.start(hour)
     
     def setUsername(self, name):
