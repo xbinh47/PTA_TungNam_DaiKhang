@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QMessageBox, QMainWindow, QListWidget, QListWidgetIt
 from PyQt6 import uic # module so that it is able to load ui file
 import sys #used for tasks related to system-specific parameters, environment variables, and interaction with the Python interpreter itself.
 import sqlite3
+import plyer
 from plyer import notification #used for getting notify in the corner of the laptop, not QMessageBox
 from custom_widget.CustomListItem import CustomListItemWidget
 #CLASS THOSE PAGES
@@ -89,14 +90,15 @@ class Login(QtWidgets.QMainWindow):
             return
 
         query = f"SELECT * FROM USER WHERE email ='{email}' and password='{password}'" #query select
+        print(query)
         result = query_db(query)
-        self.name = result[0][1]
+        
 
         if len(result) == 0:
             err_box.setText("Invalid Username or Password!")
             err_box.exec()
             return
-        
+        self.name = result[0][1]
         success_box.setText("Succesfully Login!")
         success_box.exec()
         self.showMainPage()
