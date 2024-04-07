@@ -404,6 +404,7 @@ class Reminder(QMainWindow):
                 self.timer.stop()
                 self.reminder_time = None
                 self.reminder_message = None
+                
 class Dialog(QDialog):
     def __init__(self, title, text):
         super().__init__()
