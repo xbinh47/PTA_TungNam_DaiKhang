@@ -495,6 +495,9 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
          <height>211</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
       </widget>
      </widget>
     </widget>
@@ -523,6 +526,9 @@ font: 700 10pt &quot;Segoe UI&quot;;</string>
        <font>
         <pointsize>9</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true"/>

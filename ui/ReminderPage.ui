@@ -315,6 +315,9 @@ background-color:rgb(70, 70, 70)</string>
        <height>236</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
     </widget>
     <widget class="QWidget" name="SetReminder" native="true">
      <property name="geometry">
@@ -352,6 +355,9 @@ color:rgb(0, 0, 83);
         <height>31</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
      </widget>
      <widget class="QLineEdit" name="txtReminder">
       <property name="geometry">
@@ -361,6 +367,9 @@ color:rgb(0, 0, 83);
         <width>351</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
